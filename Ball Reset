@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ballreset : MonoBehaviour
+{
+    public float leftOut;
+    public float rightOut;
+    private Vector3 originalPoint;
+    // Start is called before the first frame update
+    void Start()
+    {
+        originalPoint = transform.position;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(transform.position.x > rightOut)
+        {
+            transform.position = originalPoint;
+            Debug.Log("ball is out");
+        }
+        else if (transform.position.x < leftOut)
+        {
+            transform.position = originalPoint;
+            Debug.Log("ball is out");
+        }
+    }
+}
